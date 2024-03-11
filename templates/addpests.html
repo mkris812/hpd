@@ -1,0 +1,52 @@
+
+<!-- add_staff.html -->
+{% extends 'base.html' %}
+{% block title %}
+Add Staff
+{% endblock title %}
+
+{% block body %}
+<h3 class="text-center"><span>Add Pests & Ddiseases</span></h3>
+
+
+
+
+<div class="container mt-5">
+    <h3 class="text-center">Add New Pest</h3>
+    <form method="POST">
+        <div class="form-group">
+            <label for="common_name">Common Name</label>
+            <input type="text" class="form-control" id="common_name" name="common_name" required>
+        </div>
+        <div class="form-group">
+            <label for="scientific_name">Scientific Name</label>
+            <input type="text" class="form-control" id="scientific_name" name="scientific_name" required>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="presence_in_nz" name="presence_in_nz">
+            <label class="form-check-label" for="presence_in_nz">Presence in NZ</label>
+        </div>
+        <div class="form-group">
+            <label for="primary_image_url">Primary Image URL</label>
+            <input type="text" class="form-control" id="primary_image_url" name="primary_image_url" required>
+        </div>
+        <div class="form-group">
+            <label for="key_characteristics">Key Characteristics</label>
+            <textarea class="form-control" id="key_characteristics" name="key_characteristics" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="biology_description">Biology Description</label>
+            <textarea class="form-control" id="biology_description" name="biology_description" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="impacts">Impacts</label>
+            <textarea class="form-control" id="impacts" name="impacts" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="further_images">Further Images (JSON)</label>
+            <textarea class="form-control" id="further_images" name="further_images" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock body %}

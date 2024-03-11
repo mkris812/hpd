@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block title %}
+Register Horticulturalists Details
+{% endblock title %}
+
+{% block body %}
+<h3 class="text-center"><span>Register Horticulturalists Details</span> </h3>
+
+{% with messages=get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <form action="/register" method="post">
+            <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" class="form-control" name="firstname" id="firstname" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" class="form-control" name="lastname" id="lastname" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="active">Active</label> 
+                    <input type="checkbox" class="form-check-input" name="active" id="active" value="1" checked>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="phonenumber">Phone Number</label>
+                    <input type="number" class="form-control" name="phonenumber" id="phonenumber" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea class="form-control" name="address" id="address" required></textarea>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="datejoined">Date Joined</label>
+                    <input type="date" class="form-control" name="datejoined" id="datejoined" required>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success btn-block">Save Records</button>
+            </form>
+            <br>
+            <br>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+{% endblock body %}
